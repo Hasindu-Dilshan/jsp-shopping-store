@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+
+
+  <display-name>shopping-store</display-name>
+  
+   <servlet>
+	    <servlet-name>ListCustomersServlet</servlet-name>
+	    <servlet-class>com.store.servlet.ListCustomersServlet</servlet-class>
+  	</servlet>
+	  
+  <servlet-mapping>
+    <servlet-name>ListCustomersServlet</servlet-name>
+    <url-pattern>/ListCustomersServlet</url-pattern>
+  </servlet-mapping>
+  
+   	<servlet>
+	    <servlet-name>AddCustomerServlet</servlet-name>
+	    <servlet-class>com.store.servlet.AddCustomerServlet</servlet-class>
+  	</servlet>
+	  
+  <servlet-mapping>
+    <servlet-name>AddCustomerServlet</servlet-name>
+    <url-pattern>/AddCustomerServlet</url-pattern>
+  </servlet-mapping>
+  
+	<servlet>
+	    <servlet-name>GetCustomerServlet</servlet-name>
+	    <servlet-class>com.store.servlet.GetCustomerServlet</servlet-class>
+  	</servlet>
+	  
+  <servlet-mapping>
+    <servlet-name>GetCustomerServlet</servlet-name>
+    <url-pattern>/GetCustomerServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	    <servlet-name>UpdateCustomerServlet</servlet-name>
+	    <servlet-class>com.store.servlet.UpdateCustomerServlet</servlet-class>
+  	</servlet>
+	  
+  <servlet-mapping>
+    <servlet-name>UpdateCustomerServlet</servlet-name>
+    <url-pattern>/UpdateCustomerServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	    <servlet-name>DeleteCustomerServlet</servlet-name>
+	    <servlet-class>com.store.servlet.DeleteCustomerServlet</servlet-class>
+  	</servlet>
+	  
+  <servlet-mapping>
+    <servlet-name>DeleteCustomerServlet</servlet-name>
+    <url-pattern>/DeleteCustomerServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	    <servlet-name>GetProductDetailsServlet</servlet-name>
+	    <servlet-class>com.store.servlet.GetProductDetailsServlet</servlet-class>
+  </servlet>
+	  
+  <servlet-mapping>
+    <servlet-name>GetProductDetailsServlet</servlet-name>
+    <url-pattern>/GetProductDetailsServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	    <servlet-name>RemoveFromCartServlet</servlet-name>
+	    <servlet-class>com.store.servlet.RemoveFromCartServlet</servlet-class>
+  </servlet>
+	  
+  <servlet-mapping>
+    <servlet-name>RemoveFromCartServlet</servlet-name>
+    <url-pattern>/RemoveFromCartServlet</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+	    <servlet-name>AddToCartServlet</servlet-name>
+	    <servlet-class>com.store.servlet.AddToCartServlet</servlet-class>
+  </servlet>
+	  
+  <servlet-mapping>
+    <servlet-name>AddToCartServlet</servlet-name>
+    <url-pattern>/AddToCartServlet</url-pattern>
+  </servlet-mapping>
+
+
+    <servlet>
+	    <servlet-name>BuyNowServlet</servlet-name>
+	    <servlet-class>com.store.servlet.BuyNowServlet</servlet-class>
+  </servlet>
+	  
+  <servlet-mapping>
+    <servlet-name>BuyNowServlet</servlet-name>
+    <url-pattern>/BuyNowServlet</url-pattern>
+  </servlet-mapping>
+  
+     <servlet>
+	    <servlet-name>ProductDetailsServlet</servlet-name>
+	    <servlet-class>com.store.servlet.ProductDetailsServlet</servlet-class>
+  </servlet>
+	  
+  <servlet-mapping>
+    <servlet-name>ProductDetailsServlet</servlet-name>
+    <url-pattern>/ProductDetailsServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	    <servlet-name>UpdateCartItemServlet</servlet-name>
+	    <servlet-class>com.store.servlet.UpdateCartItemServlet</servlet-class>
+  </servlet>
+	  
+  <servlet-mapping>
+    <servlet-name>UpdateCartItemServlet</servlet-name>
+    <url-pattern>/UpdateCartItemServlet</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+	    <servlet-name>SearchProductServlet</servlet-name>
+	    <servlet-class>com.store.servlet.SearchProductServlet</servlet-class>
+  </servlet>
+	  
+  <servlet-mapping>
+    <servlet-name>SearchProductServlet</servlet-name>
+    <url-pattern>/SearchProductServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+	    <servlet-name>CustomerLoginServlet</servlet-name>
+	    <servlet-class>com.store.servlet.CustomerLoginServlet</servlet-class>
+  </servlet>
+	  
+  <servlet-mapping>
+    <servlet-name>CustomerLoginServlet</servlet-name>
+    <url-pattern>/CustomerLoginServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+	    <servlet-name>LogOutServlet</servlet-name>
+	    <servlet-class>com.store.servlet.LogOutServlet</servlet-class>
+  </servlet>
+	  
+  <servlet-mapping>
+    <servlet-name>LogOutServlet</servlet-name>
+    <url-pattern>/LogOutServlet</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>homepage.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

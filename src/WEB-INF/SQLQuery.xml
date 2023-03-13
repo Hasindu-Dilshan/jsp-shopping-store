@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Querys>
+
+	<!-- Create table customer Query -->
+	<query id="create_customer_table">
+        <![CDATA[
+            CREATE TABLE customer(
+				customerID varchar(10) not null,
+				customerName varchar(20),
+				customerEmail varchar(15),
+				customerBirthYear varchar(4),
+				customerGender varchar(6) DEFAULT 'Male',
+				customerPassword  varchar(20),
+				primary key (customerID)
+			)
+        ]]>
+	</query>
+	
+	<!-- Create table product Query -->
+	<query id="create_product_table">
+        <![CDATA[
+            CREATE TABLE product(
+				id int not null,
+				title varchar(45),
+				price double,
+				details varchar(100),
+				tag varchar(20) ,
+				thumbnail  varchar(45),
+				rating int,
+				date datetime,
+				primary key (id)
+				
+			)
+        ]]>
+	</query>
+
+	<!-- DROP TABLE CUSTOMERS Query -->
+	<query id="drop_customer_table">
+         <![CDATA[        
+            DROP TABLE IF EXISTS customer 
+        ]]>
+	</query>
+	
+	<!-- DROP TABLE PRODUCTS Query -->
+	<query id="drop_product_table">
+         <![CDATA[        
+            DROP TABLE IF EXISTS product
+        ]]>
+	</query>
+
+	<!-- Insert customer Query -->
+	<query id="insert_customer">
+        <![CDATA[
+          	insert into customer (customerID, customerName, customerEmail, customerBirthYear, customerGender, customerPassword) 
+          	values (?, ?, ?, ?, ?, ?)
+        ]]>
+	</query>
+
+	<!-- Select a particular customer by id Query -->
+	<query id="customer_by_id">
+         <![CDATA[        
+            select * from customer where customer.customerID = ?
+        ]]>
+	</query>
+	
+	<!-- Select a particular product by id Query -->
+	<query id="product_by_id">
+         <![CDATA[        
+            select * from product where product.id = ?
+        ]]>
+	</query>
+
+	<!-- Select all customers -->
+	<query id="all_customers">
+         <![CDATA[        
+            select * from customer
+        ]]>
+	</query>
+	
+	<!-- Select all products -->
+	<query id="all_products">
+         <![CDATA[        
+            select * from product
+        ]]>
+	</query>
+
+	<!-- Delete a particular customer by id Query -->
+	<query id="remove_customer">
+         <![CDATA[        
+            delete from customer where customer.customerID = ?
+        ]]>
+	</query>
+	
+	<!-- Update a particular customer by id Query -->
+	<query id="update_customer">
+         <![CDATA[        
+            update customer as c 
+            set c.customerName = ?, c.customerEmail = ?, c.customerBirthYear = ?, c.customerGender = ?, c.customerPassword = ? 
+            where c.customerID = ?
+        ]]>
+	</query>
+	
+		<!-- Get customer IDs Query -->
+	<query id="customer_ids">
+         <![CDATA[        
+            select c.customerID from customer as c
+        ]]>
+	</query>
+	
+		<!-- Get Discounts query -->
+	<query id="discount_by_id">
+         <![CDATA[        
+            select d.rate 
+            from discount as d 
+            where d.productID = ?
+        ]]>
+	</query>
+	
+		<!-- Get All cart details -->
+	<query id="discount_by_id">
+         <![CDATA[        
+            select * from cartitem
+        ]]>
+	</query>
+	
+	<!-- Insert cart items Query -->
+	<query id="insert_cart_item">
+        <![CDATA[
+          	insert into cartitem (itemID, customerID, quantity, productID) 
+          	values (?, ?, ?, ?)
+        ]]>
+	</query>
+	
+		<!-- Get cart item IDs Query -->
+	<query id="customer_ids">
+         <![CDATA[        
+            select ci.itemID from cartitem as ci
+        ]]>
+	</query>
+	
+		<!-- Select all cart items -->
+	<query id="all_cart_items">
+         <![CDATA[        
+            select c.itemID, p.id , p.title, p.price, p.thumbnail, c.customerID, c.quantity, d.rate
+			from cartitem as c
+			inner join product as p on c.productID=p.id
+			inner join discount as d on c.productID=d.productID;
+        ]]>
+	</query>
+		<!-- Get Item IDs Query -->
+	<query id="item_ids">
+         <![CDATA[        
+            select i.itemID from cartitem as i
+        ]]>
+	</query>
+	
+	<!-- Delete a particular item by id Query -->
+	<query id="remove_item">
+         <![CDATA[        
+            delete from cartitem where cartitem.productID = ?
+        ]]>
+	</query>
+	
+	<!-- Select product by tag -->
+	<query id="product_by_tag">
+         <![CDATA[        
+            select p.id from product as p where p.tag = ?
+        ]]>
+	</query>
+
+</Querys>
